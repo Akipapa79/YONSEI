@@ -6,23 +6,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { margin: 0; font-family: 'Noto Sans KR', sans-serif; background: #f4f7fa; color: #2d3436; overflow: hidden; } /* 스크롤 없이 한 화면 고정 */
+        body { margin: 0; font-family: 'Noto Sans KR', sans-serif; background: #f4f7fa; color: #2d3436; }
         header { background: #003876; padding: 15px 40px; display: flex; align-items: center; gap: 20px; color: #fff; border-bottom: 4px solid #b2945e; }
-        header img { height: 50px; background: #fff; border-radius: 50%; padding: 4px; }
-        header span { font-size: 24px; font-weight: 700; }
-        .container { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
-        .card { background: #fff; border-radius: 15px; padding: 20px 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 15px; border-left: 5px solid #003876; }
-        .card h2 { font-size: 20px; color: #003876; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px; }
-        .btn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .link-btn { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 10px; border-radius: 12px; text-decoration: none; color: #fff; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .link-btn i { font-size: 22px; }
-        .link-btn span { font-size: 20px; font-weight: 700; } /* 글씨는 크게 유지 */
-        .link-btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 8px 15px rgba(0,0,0,0.15); }
+        header img { height: 45px; background: #fff; border-radius: 50%; padding: 4px; }
+        header span { font-size: 22px; font-weight: 700; }
+        .container { max-width: 1000px; margin: 15px auto; padding: 0 20px; }
+        .card { background: #fff; border-radius: 12px; padding: 15px 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 12px; border-left: 5px solid #003876; }
+        .card h2 { font-size: 18px; color: #003876; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px; }
+        .btn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .link-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 5px; border-radius: 10px; text-decoration: none; color: #fff; transition: 0.3s; }
+        .link-btn span { font-size: 18px; font-weight: 700; } 
+        .link-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
         
-        /* 럭셔리 딥 컬러 그라데이션 */
-        .btn-royal { background: linear-gradient(135deg, #003876, #1e5295); } /* 로열 블루 */
-        .btn-slate { background: linear-gradient(135deg, #475569, #1e293b); } /* 슬레이트 네이비 */
-        .btn-platinum { background: linear-gradient(135deg, #71717a, #3f3f46); } /* 플래티넘 실버 */
+        /* 세련된 딥 컬러 그라데이션 */
+        .btn-royal { background: linear-gradient(135deg, #003876, #1e5295); }
+        .btn-slate { background: linear-gradient(135deg, #334155, #0f172a); }
+        .btn-dark { background: linear-gradient(135deg, #52525b, #27272a); }
     </style>
 </head>
 <body>
@@ -34,23 +33,23 @@
     <div class="card">
         <h2><i class="fa-solid fa-school"></i> 학교 서비스</h2>
         <div class="btn-grid">
-            <a href="https://portal.yonsei.ac.kr/" target="_blank" class="link-btn btn-royal"><i class="fa-solid fa-door-open"></i><span>연세대 포털</span></a>
-            <a href="https://ys.learnus.org/" target="_blank" class="link-btn btn-royal"><i class="fa-solid fa-laptop-code"></i><span>LearnUs</span></a>
-            <a href="https://yonseicoop.com/" target="_blank" class="link-btn btn-royal"><i class="fa-solid fa-cart-shopping"></i><span>굿즈 온라인샵</span></a>
+            <a href="https://portal.yonsei.ac.kr/" target="_blank" class="link-btn btn-royal"><span>연세대 포털</span></a>
+            <a href="https://ys.learnus.org/" target="_blank" class="link-btn btn-royal"><span>LearnUs</span></a>
+            <a href="https://yonseicoop.com/" target="_blank" class="link-btn btn-royal"><span>굿즈 샵</span></a>
         </div>
     </div>
     <div class="card">
         <h2><i class="fa-solid fa-star"></i> 17기 전용</h2>
         <div class="btn-grid">
-            <a href="https://willryugo.github.io/EMBA17/" target="_blank" class="link-btn btn-slate"><i class="fa-solid fa-chalkboard-user"></i><span>학술운영보드</span></a>
-            <a href="https://willryugo.github.io/EMBA17/members_private.html" target="_blank" class="link-btn btn-slate"><i class="fa-solid fa-address-book"></i><span>16,17기 명단</span></a>
+            <a href="https://willryugo.github.io/EMBA17/" target="_blank" class="link-btn btn-slate"><span>학술운영보드</span></a>
+            <a href="https://willryugo.github.io/EMBA17/members_private.html" target="_blank" class="link-btn btn-slate"><span>16,17기 명단</span></a>
         </div>
     </div>
     <div class="card">
         <h2><i class="fa-solid fa-crown"></i> 동문 네트워크</h2>
-        <div class="btn-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-            <a href="https://yonsei-emba.co.kr/" target="_blank" class="link-btn btn-platinum"><i class="fa-solid fa-id-card"></i><span>EMBA 동문명부</span></a>
-            <a href="https://www.yonsein.net/" target="_blank" class="link-btn btn-platinum"><i class="fa-solid fa-users-rectangle"></i><span>연세대 총동문회</span></a>
+        <div class="btn-grid">
+            <a href="https://yonsei-emba.co.kr/" target="_blank" class="link-btn btn-dark"><span>EMBA 동문</span></a>
+            <a href="https://www.yonsein.net/" target="_blank" class="link-btn btn-dark"><span>총동문회</span></a>
         </div>
     </div>
 </div>
