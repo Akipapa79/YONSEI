@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>연세대학교 EMBA 대시보드</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        body { margin: 0; font-family: 'Noto Sans KR', sans-serif; background: #f0f4f8; }
+
+        header { background: #003876; padding: 25px 40px; display: flex; align-items: center; gap: 15px; color: white; font-size: 26px; font-weight: 700; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+        header img { height: 50px; background: white; border-radius: 50%; padding: 3px; }
+
+        .container { max-width: 1000px; margin: 40px auto; display: grid; gap: 20px; padding: 0 20px; }
+
+        .card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border-top: 4px solid #003876; }
+
+        .card h2 { color: #003876; font-size: 20px; margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #f0f4f8; padding-bottom: 12px; }
+
+        .btn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+
+        .link-btn { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: #1e293b; font-weight: 700; transition: 0.3s; }
+
+        .link-btn:hover { background: #003876; color: white; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,56,118,0.2); }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Yonsei_University_emblem.svg/120px-Yonsei_University_emblem.svg.png" alt="연세대 마크">
+
+    <span>연세대학교 EMBA 대시보드</span>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2><i class="fa-solid fa-school"></i> 학교관련</h2>
+
+        <div class="btn-grid">
+
+            <a href="https://portal.yonsei.ac.kr/ui/index.html#" target="_blank" class="link-btn">연세대포털 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+            <a href="https://ys.learnus.org/" target="_blank" class="link-btn">LearnUs YONSEI <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+            <a href="https://yonseicoop.com/?srsltid=AfmBOor305Yg3xAJs6r5Mx2Y6Ax_zafAjBcgQAGxW5jpp-SjMcjQyhPb" target="_blank" class="link-btn">연세대굿즈온라인샵 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2><i class="fa-solid fa-users"></i> 17기관련</h2>
+
+        <div class="btn-grid">
+
+            <a href="https://willryugo.github.io/EMBA17/" target="_blank" class="link-btn">17기 학술운영보드 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+            <a href="https://willryugo.github.io/EMBA17/members_private.html?v=2c190ed" target="_blank" class="link-btn">16기, 17기 명단 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2><i class="fa-solid fa-graduation-cap"></i> 동문회관련</h2>
+
+        <div class="btn-grid" style="grid-template-columns: repeat(2, 1fr);">
+
+            <a href="https://yonsei-emba.co.kr/?c=main" target="_blank" class="link-btn">EMBA 동문명부 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+            <a href="https://www.yonsein.net/" target="_blank" class="link-btn">연세대 총동문회 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
