@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>연세대학교 EMBA 대시보드</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { margin: 0; font-family: 'Noto Sans KR', sans-serif; background: #f8f9fa; color: #333; }
-        header { background: #003876; padding: 25px 40px; display: flex; align-items: center; gap: 20px; color: white; font-size: 28px; font-weight: 700; border-bottom: 5px solid #b2945e; }
-        header img { height: 60px; background: white; border-radius: 50%; padding: 5px; }
-        .container { max-width: 1100px; margin: 40px auto; display: grid; gap: 30px; padding: 0 20px; }
-        .card { background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .card h2 { font-size: 24px; color: #003876; margin-top: 0; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; border-bottom: 2px solid #f1f1f1; padding-bottom: 15px; }
-        .btn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .link-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 15px; border-radius: 15px; text-decoration: none; color: white; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .link-btn span { font-size: 20px; font-weight: 700; margin-top: 10px; } 
-        .link-btn i { font-size: 30px; }
-        .link-btn:hover { transform: translateY(-5px); filter: brightness(1.1); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+        body { margin: 0; font-family: 'Noto Sans KR', sans-serif; background: #ffffff; color: #333; }
+        header { background: #003876; padding: 30px 50px; display: flex; align-items: center; gap: 25px; color: #fff; border-bottom: 6px solid #b2945e; }
+        header img { height: 70px; background: #fff; border-radius: 50%; padding: 5px; }
+        header span { font-size: 32px; font-weight: 700; letter-spacing: -1px; }
+        .container { max-width: 1200px; margin: 50px auto; padding: 0 30px; }
+        .card { background: #fff; border-radius: 25px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); margin-bottom: 40px; border: 1px solid #eee; }
+        .card h2 { font-size: 28px; color: #003876; margin: 0 0 30px 0; display: flex; align-items: center; gap: 15px; }
+        .btn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .link-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 20px; text-decoration: none; color: #fff; transition: 0.4s; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .link-btn i { font-size: 45px; margin-bottom: 15px; }
+        .link-btn span { font-size: 24px; font-weight: 700; } /* 글씨 크기 대폭 확대 */
+        .link-btn:hover { transform: translateY(-10px); filter: brightness(1.1); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
         
-        /* 세련된 파스텔 그라데이션 */
-        .btn-blue { background: linear-gradient(135deg, #6a9edb, #3b82f6); }
-        .btn-purple { background: linear-gradient(135deg, #a78bfa, #8b5cf6); }
+        /* 럭셔리 파스텔 그라데이션 */
+        .btn-blue { background: linear-gradient(135deg, #5c93d4, #2b65af); }
+        .btn-purple { background: linear-gradient(135deg, #a78bfa, #7c3aed); }
         .btn-gold { background: linear-gradient(135deg, #fbbf24, #d97706); }
     </style>
 </head>
 <body>
 <header>
-    <img src="yonsei.jpg" alt="연세대 로고"> 
+    <img src="yonsei.jpg" alt="연세대 로고">
     <span>연세대학교 EMBA 대시보드</span>
 </header>
 <div class="container">
