@@ -2,380 +2,357 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>연세대학교 EMBA 대시보드</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연세대학교 EMBA 대시보드</title>
 
-    <style>
-        * { box-sizing: border-box; }
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        body {
-            margin: 0;
-            font-family: 'Noto Sans KR', sans-serif;
-            background: linear-gradient(135deg, #eef3f9 0%, #f8fafc 100%);
-            color: #1e293b;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        header {
-            background: linear-gradient(135deg, #002b5c 0%, #003876 45%, #1d4ed8 100%);
-            padding: 18px 40px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            color: #fff;
-            border-bottom: 3px solid #c5a46d;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-        }
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #eef3f9, #f8fafc);
+    color: #1e293b;
+}
 
-        header img {
-            height: 48px;
-            background: rgba(255,255,255,0.95);
-            border-radius: 50%;
-            padding: 5px;
-        }
+/* 상단 헤더 */
 
-        header span {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
+header {
+    background: linear-gradient(135deg,
+        #002b5c 0%,
+        #003876 45%,
+        #1d4ed8 100%);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: white;
+    border-bottom: 3px solid #c5a46d;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
 
-        .container {
-            max-width: 1050px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
+header img {
+    height: 48px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 50%;
+    padding: 5px;
+}
 
-        .card {
-            background: rgba(255,255,255,0.92);
-            border-radius: 18px;
-            padding: 22px 28px;
-            margin-bottom: 18px;
-            border: 1px solid rgba(255,255,255,0.7);
-            box-shadow: 0 10px 28px rgba(15,23,42,0.08);
-        }
+header span {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
 
-        .card h2 {
-            font-size: 19px;
-            color: #0f172a;
-            margin: 0 0 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-        }
+.container {
+    max-width: 1050px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
 
-        .card h2 i { color: #2563eb; }
+/* 일반 카드 */
 
-        .btn-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
+.card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    padding: 22px 28px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: 0 10px 28px rgba(15,23,42,0.08);
+}
 
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: 800;
-            font-size: 20px;
-            transition: 0.25s ease;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
+.card h2 {
+    font-size: 19px;
+    color: #0f172a;
+    margin: 0 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+}
 
-        .link-btn::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top right, rgba(255,255,255,0.2), transparent);
-            border-radius: 11px;
-            pointer-events: none;
-        }
+.card h2 i {
+    color: #2563eb;
+}
 
-        .link-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            filter: brightness(1.15);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
 
-        .link-btn span {
-            position: relative;
-            z-index: 2;
-        }
+/* 기존 버튼 */
 
-        .btn-royal {
-            background: linear-gradient(135deg, #002266 0%, #004dc7 35%, #9cc6ff 40%, #00308a 60%, #001f4d 100%);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -6px 15px rgba(0,0,0,0.15), 0 8px 18px rgba(0,82,217,0.32);
-        }
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    transition: 0.25s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
 
-        .btn-slate {
-            background: linear-gradient(135deg, #3a006d 0%, #a44dff 35%, #edccff 40%, #611bbe 60%, #1e0038 100%);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -6px 15px rgba(0,0,0,0.15), 0 8px 18px rgba(123,34,217,0.3);
-        }
+.link-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right,
+        rgba(255,255,255,0.2),
+        transparent);
+    border-radius: 11px;
+    pointer-events: none;
+}
 
-        .btn-dark {
-            background: linear-gradient(135deg, #004c38 0%, #00a379 35%, #a6f6df 40%, #00664d 60%, #002e1f 100%);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -6px 15px rgba(0,0,0,0.15), 0 8px 18px rgba(0,143,104,0.3);
-        }
+.link-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: brightness(1.15);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
 
-        /* 17기 추억 공유 특별 영역 */
+.link-btn span {
+    position: relative;
+    z-index: 2;
+}
 
-        .memory-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 22px;
-            margin-bottom: 25px;
-            padding: 28px 32px 32px;
-            background:
-                radial-gradient(ellipse at 15% 80%, rgba(255,197,113,0.55), transparent 48%),
-                radial-gradient(ellipse at 85% 12%, rgba(255,164,202,0.4), transparent 48%),
-                linear-gradient(125deg, #fff3d8 0%, #fff9f5 48%, #ffe5ed 100%);
-            border: 2px solid #e4bd78;
-            box-shadow: 0 12px 32px rgba(195,125,76,0.18);
-        }
+.btn-royal {
+    background: linear-gradient(135deg,
+        #002266 0%,
+        #004dc7 35%,
+        #9cc6ff 40%,
+        #00308a 60%,
+        #001f4d 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.4),
+        inset 0 -6px 15px rgba(0,0,0,0.15),
+        0 8px 18px rgba(0,82,217,0.32);
+}
 
-        .memory-card::before {
-            content: "";
-            position: absolute;
-            top: -80px;
-            right: -60px;
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,201,87,0.25), transparent 70%);
-            pointer-events: none;
-        }
+.btn-slate {
+    background: linear-gradient(135deg,
+        #3a006d 0%,
+        #a44dff 35%,
+        #edccff 40%,
+        #611bbe 60%,
+        #1e0038 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.4),
+        inset 0 -6px 15px rgba(0,0,0,0.15),
+        0 8px 18px rgba(123,34,217,0.3);
+}
 
-        .memory-heading {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 24px;
-            border-radius: 12px;
-            color: #fff;
-            background: linear-gradient(115deg, #082b60, #2458a1, #102c58);
-            border: 1px solid #cfaa65;
-            box-shadow: 0 5px 13px rgba(12,36,85,0.18);
-            font-size: 21px;
-            font-weight: 800;
-        }
+.btn-dark {
+    background: linear-gradient(135deg,
+        #004c38 0%,
+        #00a379 35%,
+        #a6f6df 40%,
+        #00664d 60%,
+        #002e1f 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.4),
+        inset 0 -6px 15px rgba(0,0,0,0.15),
+        0 8px 18px rgba(0,143,104,0.3);
+}
 
-        .memory-heading i {
-            color: #f9d685;
-        }
+/* 17기 추억 공유 - 최상단 특별 영역 */
 
-        .memory-content {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 25px;
-            align-items: center;
-            min-height: 235px;
-            padding-top: 18px;
-        }
+.memory-banner {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 22px;
+    margin-bottom: 18px;
+    background: linear-gradient(110deg,
+        #ffffff 0%,
+        #fffdf9 55%,
+        #fff9fc 100%);
+    border: 2px solid #e8b55d;
+    border-radius: 18px;
+    box-shadow: 0 7px 20px rgba(164,112,42,0.13);
+}
 
-        .memory-visual {
-            position: relative;
-            height: 210px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+/* 왼쪽 제목 */
 
-        .polaroid {
-            position: absolute;
-            width: 113px;
-            height: 140px;
-            padding: 8px 8px 23px;
-            background: #fff;
-            border-radius: 3px;
-            box-shadow: 0 9px 17px rgba(47,43,42,0.23);
-        }
+.memory-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    font-size: 22px;
+    font-weight: 800;
+    color: #092b63;
+    white-space: nowrap;
+}
 
-        .polaroid .photo {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.92);
-            font-size: 41px;
-        }
+.memory-title i {
+    color: #d7298e;
+    font-size: 25px;
+}
 
-        .photo-one {
-            left: 8%;
-            top: 30px;
-            transform: rotate(-16deg);
-        }
+/* 제목 옆 구분선 */
 
-        .photo-one .photo {
-            background: linear-gradient(140deg, #576ab6, #e8a1a2, #f9c37d);
-        }
+.memory-divider {
+    width: 2px;
+    height: 42px;
+    background: #d9dee8;
+    flex-shrink: 0;
+}
 
-        .photo-two {
-            right: 12%;
-            top: 38px;
-            transform: rotate(12deg);
-        }
+/* 중앙 설명 */
 
-        .photo-two .photo {
-            background: linear-gradient(135deg, #397f9c, #73b7ad, #edbd78);
-        }
+.memory-description {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #334766;
+    line-height: 1.6;
+}
 
-        .camera-art {
-            position: relative;
-            z-index: 2;
-            font-size: 105px;
-            color: #233c59;
-            filter: drop-shadow(6px 9px 5px rgba(31,41,55,0.22));
-        }
+/* 가장 오른쪽 업로드 버튼 */
 
-        .video-art {
-            position: absolute;
-            right: 8%;
-            bottom: 2px;
-            z-index: 3;
-            width: 76px;
-            height: 65px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 34px;
-            color: #fff;
-            border-radius: 13px;
-            background: linear-gradient(135deg, #bd56d6, #f17a9b);
-            border: 3px solid white;
-            box-shadow: 0 6px 14px rgba(100,45,92,0.2);
-            transform: rotate(8deg);
-        }
+.upload-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex: 0 0 auto;
+    padding: 16px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    font-weight: 800;
+    white-space: nowrap;
+    text-shadow: 1px 2px 3px rgba(100,30,60,0.4);
+    background: linear-gradient(110deg,
+        #d40091 0%,
+        #ef319e 32%,
+        #ff6481 56%,
+        #ff9a20 100%);
+    border: 2px solid rgba(255,255,255,0.8);
+    box-shadow:
+        inset 0 3px 4px rgba(255,255,255,0.4),
+        inset 0 -5px 7px rgba(120,25,55,0.18),
+        0 7px 17px rgba(214,46,111,0.32);
+    transition: 0.25s;
+}
 
-        .sparkle {
-            position: absolute;
-            color: #e4a33a;
-            font-size: 23px;
-        }
+.upload-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 22px rgba(214,46,111,0.45);
+}
 
-        .sparkle.one { top: 4px; left: 30%; }
-        .sparkle.two { top: 14px; right: 14%; }
-        .sparkle.three { bottom: 10px; left: 17%; }
+.upload-btn i {
+    font-size: 22px;
+}
 
-        .memory-info {
-            text-align: center;
-            position: relative;
-            z-index: 4;
-        }
+.upload-btn .arrow {
+    font-size: 14px;
+}
 
-        .memory-title {
-            margin: 0 0 12px;
-            color: #233b62;
-            font-size: 29px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            line-height: 1.4;
-        }
+/* 스마트폰 대응 */
 
-        .memory-description {
-            color: #6b5960;
-            font-size: 15px;
-            line-height: 1.9;
-            margin: 0 0 24px;
-        }
+@media (max-width: 768px) {
 
-        .upload-btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 14px;
-            width: min(100%, 365px);
-            padding: 19px 22px;
-            border-radius: 17px;
-            color: white;
-            text-decoration: none;
-            font-size: 23px;
-            font-weight: 800;
-            text-shadow: 1px 2px 3px rgba(108,29,58,0.38);
-            background: linear-gradient(
-                115deg,
-                #a91b83 0%,
-                #eb439e 26%,
-                #ff91a2 43%,
-                #ffac58 65%,
-                #e57b1c 100%
-            );
-            border: 1px solid rgba(255,255,255,0.8);
-            box-shadow:
-                inset 0 3px 4px rgba(255,255,255,0.55),
-                inset 0 -5px 8px rgba(125,38,57,0.24),
-                0 9px 19px rgba(218,71,117,0.35);
-            transition: 0.25s ease;
-        }
+    header {
+        padding: 14px 15px;
+        gap: 10px;
+    }
 
-        .upload-btn:hover {
-            transform: translateY(-4px);
-            filter: brightness(1.07);
-            box-shadow: 0 13px 25px rgba(218,71,117,0.45);
-        }
+    header img {
+        height: 40px;
+    }
 
-        .upload-btn i {
-            font-size: 26px;
-        }
+    header span {
+        font-size: 19px;
+    }
 
-        @media (max-width: 768px) {
-            header { padding: 16px 20px; }
-            header span { font-size: 20px; }
+    .container {
+        margin: 12px auto;
+        padding: 0 12px;
+    }
 
-            .btn-grid {
-                grid-template-columns: 1fr;
-            }
+    .card {
+        padding: 18px;
+        margin-bottom: 12px;
+    }
 
-            .card {
-                padding: 20px;
-            }
+    .btn-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
 
-            .memory-card {
-                padding: 20px 16px 26px;
-            }
+    .link-btn {
+        font-size: 18px;
+        padding: 13px;
+    }
 
-            .memory-heading {
-                font-size: 19px;
-                padding: 10px 16px;
-            }
+    /* 스마트폰 추억 공유 */
 
-            .memory-content {
-                grid-template-columns: 1fr;
-                gap: 5px;
-                padding-top: 5px;
-            }
+    .memory-banner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px 10px;
+        padding: 12px;
+        margin-bottom: 12px;
+        align-items: center;
+    }
 
-            .memory-visual {
-                height: 190px;
-                max-width: 360px;
-                width: 100%;
-                margin: 0 auto;
-            }
+    .memory-title {
+        grid-column: 1;
+        font-size: 17px;
+        gap: 6px;
+    }
 
-            .memory-title {
-                font-size: 24px;
-            }
+    .memory-title i {
+        font-size: 19px;
+    }
 
-            .memory-description {
-                font-size: 14px;
-            }
+    .memory-divider {
+        display: none;
+    }
 
-            .upload-btn {
-                font-size: 20px;
-                padding: 17px 15px;
-            }
-        }
-    </style>
+    .memory-description {
+        grid-column: 1;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 1.45;
+    }
+
+    .upload-btn {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        padding: 13px 12px;
+        gap: 5px;
+        font-size: 12px;
+    }
+
+    .upload-btn i {
+        font-size: 15px;
+    }
+
+    .upload-btn .arrow {
+        font-size: 10px;
+    }
+}
+
+</style>
 </head>
 
 <body>
@@ -387,117 +364,136 @@
 
 <div class="container">
 
+    <!-- 17기 추억 공유 : 최상단 -->
+
+    <section class="memory-banner">
+
+        <div class="memory-title">
+            <i class="fa-solid fa-camera"></i>
+            <span>17기 추억 공유</span>
+        </div>
+
+        <div class="memory-divider"></div>
+
+        <div class="memory-description">
+            직접 찍은 사진과 영상을 올려주세요.<br>
+            우리의 소중한 추억을 함께 나눠요!
+        </div>
+
+        <a
+            href="https://drive.google.com/drive/folders/1HVLuASUzvOKL4t5-RquGLd2BmSXVdXqO"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="upload-btn"
+        >
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>사진·영상 업로드</span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+    </section>
+
     <!-- 학교 서비스 -->
+
     <div class="card">
-        <h2><i class="fa-solid fa-school"></i> 학교 서비스</h2>
+        <h2>
+            <i class="fa-solid fa-school"></i>
+            학교 서비스
+        </h2>
+
         <div class="btn-grid">
-            <a href="https://portal.yonsei.ac.kr/" target="_blank" rel="noopener noreferrer" class="link-btn btn-royal">
+
+            <a href="https://portal.yonsei.ac.kr/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-royal">
                 <span>연세대 포털</span>
             </a>
-            <a href="https://ys.learnus.org/" target="_blank" rel="noopener noreferrer" class="link-btn btn-royal">
+
+            <a href="https://ys.learnus.org/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-royal">
                 <span>LearnUs</span>
             </a>
-            <a href="https://yonseicoop.com/" target="_blank" rel="noopener noreferrer" class="link-btn btn-royal">
+
+            <a href="https://yonseicoop.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-royal">
                 <span>굿즈 샵</span>
             </a>
+
         </div>
     </div>
 
     <!-- 17기 전용 -->
+
     <div class="card">
-        <h2><i class="fa-solid fa-star"></i> 17기 전용</h2>
+        <h2>
+            <i class="fa-solid fa-star"></i>
+            17기 전용
+        </h2>
+
         <div class="btn-grid">
-            <a href="https://willryugo.github.io/EMBA17/" target="_blank" rel="noopener noreferrer" class="link-btn btn-slate">
+
+            <a href="https://willryugo.github.io/EMBA17/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-slate">
                 <span>학술운영보드</span>
             </a>
-            <a href="https://willryugo.github.io/EMBA17/members_private.html" target="_blank" rel="noopener noreferrer" class="link-btn btn-slate">
+
+            <a href="https://willryugo.github.io/EMBA17/members_private.html"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-slate">
                 <span>16·17기 명단 (핀:2580)</span>
             </a>
-            <a href="https://docs.google.com/spreadsheets/d/1wpRfh62ZCXjM1MDO91RZiyOuP1kpKQBo1kjzyvrIGMg/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer" class="link-btn btn-slate">
+
+            <a href="https://docs.google.com/spreadsheets/d/1wpRfh62ZCXjM1MDO91RZiyOuP1kpKQBo1kjzyvrIGMg/edit?gid=0#gid=0"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-slate">
                 <span>원우회비조회</span>
             </a>
-            <a href="https://www.dualbrain.studio/magazine" target="_blank" rel="noopener noreferrer" class="link-btn btn-slate">
+
+            <a href="https://www.dualbrain.studio/magazine"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-slate">
                 <span>DualBrain (핀:2580)</span>
             </a>
+
         </div>
     </div>
 
     <!-- 동문 네트워크 -->
+
     <div class="card">
-        <h2><i class="fa-solid fa-crown"></i> 동문 네트워크</h2>
+        <h2>
+            <i class="fa-solid fa-crown"></i>
+            동문 네트워크
+        </h2>
+
         <div class="btn-grid">
-            <a href="https://yonsei-emba.co.kr/" target="_blank" rel="noopener noreferrer" class="link-btn btn-dark">
+
+            <a href="https://yonsei-emba.co.kr/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-dark">
                 <span>EMBA 동문</span>
             </a>
-            <a href="https://www.yonseialumni.net/" target="_blank" rel="noopener noreferrer" class="link-btn btn-dark">
+
+            <a href="https://www.yonseialumni.net/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-btn btn-dark">
                 <span>총동문회</span>
             </a>
+
         </div>
     </div>
-
-    <!-- 새로 추가한 17기 추억 공유 -->
-    <section class="memory-card">
-
-        <div class="memory-heading">
-            <i class="fa-solid fa-images"></i>
-            <span>17기 추억 공유</span>
-        </div>
-
-        <div class="memory-content">
-
-            <div class="memory-visual" aria-hidden="true">
-
-                <div class="polaroid photo-one">
-                    <div class="photo">
-                        <i class="fa-solid fa-people-group"></i>
-                    </div>
-                </div>
-
-                <div class="polaroid photo-two">
-                    <div class="photo">
-                        <i class="fa-solid fa-mountain-sun"></i>
-                    </div>
-                </div>
-
-                <i class="fa-solid fa-camera-retro camera-art"></i>
-
-                <div class="video-art">
-                    <i class="fa-solid fa-play"></i>
-                </div>
-
-                <i class="fa-solid fa-star sparkle one"></i>
-                <i class="fa-solid fa-star sparkle two"></i>
-                <i class="fa-solid fa-star sparkle three"></i>
-
-            </div>
-
-            <div class="memory-info">
-
-                <h2 class="memory-title">
-                    함께한 순간을 남겨주세요
-                </h2>
-
-                <p class="memory-description">
-                    직접 찍은 사진과 영상을 올려주세요.<br>
-                    우리의 소중한 추억을 함께 나눠요.
-                </p>
-
-                <a
-                    href="https://drive.google.com/drive/folders/1HVLuASUzvOKL4t5-RquGLd2BmSXVdXqO"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="upload-btn"
-                >
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                    <span>사진·영상 업로드</span>
-                    <i class="fa-solid fa-chevron-right" style="font-size:17px;"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
 
 </div>
 
